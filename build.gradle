@@ -1,4 +1,16 @@
 apply plugin:'java'
 apply plugin: 'application'
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 mainClassName = 'Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.10'
+	annotationProcessor 'org.projectlombok:lombok:1.18.10'
+}
